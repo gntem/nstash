@@ -1,0 +1,18 @@
+{
+  "inputs": {
+    "stdin": {
+      "codec": "json"
+    }
+  },
+  "filters": {
+    "blacklist": {
+      "field": "keywords",
+      "terms": ["x", "y"]
+    }
+  },
+  "outputs": {
+    "stdout": {
+      "codec": "json"
+    }
+  }
+}

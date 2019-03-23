@@ -1,0 +1,37 @@
+{
+  "name": "nstash",
+  "version": "1.0.0",
+  "description": "Streaming event processor in nodejs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "ts-jest ./src"
+  },
+  "keywords": [
+    "stream",
+    "event",
+    "processor"
+  ],
+  "author": "Giorgos Ntemiris",
+  "license": "MIT",
+  "dependencies": {
+    "joi": "^14.3.1",
+    "jsonstream": "^1.0.3",
+    "lodash.omit": "^4.5.0",
+    "yargs": "^13.2.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "@types/joi": "^14.3.2",
+    "@types/lodash.omit": "^4.5.6",
+    "@types/node": "^11.11.3",
+    "@types/streamtest": "^1.2.0",
+    "@types/yargs": "^12.0.10",
+    "jest": "^24.5.0",
+    "streamtest": "^1.2.4",
+    "ts-jest": "^24.0.0",
+    "ts-node": "^8.0.3",
+    "tslint": "^5.14.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^3.3.3333"
+  }
+}
