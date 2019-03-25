@@ -1,13 +1,15 @@
-import nstashevent from './nstashevent';
 import { Transform, TransformOptions } from 'stream';
+
+import NstashEvent from './NstashEvent';
 
 interface BaseCodecEncoderInterface extends Transform {}
 
 interface BaseCodecDecoderInterface extends Transform  {}
 
 interface BaseCodecInterface {
-  newEncoder(options?: TransformOptions): BaseCodecEncoderInterface;
-  newDecoder(options?: TransformOptions): BaseCodecDecoderInterface;
+  name: string;
+  newEncoder(options ? : TransformOptions) : BaseCodecEncoderInterface;
+  newDecoder(options ? : TransformOptions) : BaseCodecDecoderInterface;
 }
 
 export {

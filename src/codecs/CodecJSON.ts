@@ -1,9 +1,10 @@
 import { Stream, TransformOptions } from 'stream';
+
 import {
   BaseCodecInterface,
   BaseCodecEncoderInterface,
   BaseCodecDecoderInterface,
- } from '../interfaces/codec';
+ } from '../interfaces/Codec';
 
 class CodecJsonEncoder extends Stream.Transform implements BaseCodecEncoderInterface{
   constructor(streamOptions?: TransformOptions) {
@@ -23,13 +24,13 @@ class CodecJsonDecoder extends Stream.Transform implements BaseCodecDecoderInter
   }
   // tslint:disable-next-line:function-name
   _transform(chunk: any, encoding: BufferEncoding, callback: Function) {
-    console.log('>>> decoder', chunk.toString('utf8'), typeof chunk);
     this.push(chunk);
     callback(null);
   }
 }
 
 class CodecJson implements BaseCodecInterface{
+  name = 'json';
   newEncoder(options?: TransformOptions) {
     return new CodecJsonEncoder(options);
   }

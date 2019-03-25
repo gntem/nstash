@@ -1,11 +1,11 @@
-import json from '../json';
+import * as codecs from '../index';
 import * as streamtest from 'streamtest';
 
 const chunks = [
     { key1: 'value1', key2: 'value2' }
     , { key3: 'value3', key4: 'value4' }];
 
-const instance = new json();
+const instance = new codecs.json;
 
 describe('[Codec] - json', () => {
   test('codec encode', (done) => {

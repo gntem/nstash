@@ -1,4 +1,4 @@
-import nstashevent from './nstashevent';
+import NstashEvent from './NstashEvent';
 
 interface StreamingTransportInterface{
   readonly config: Object;
@@ -13,11 +13,11 @@ interface StreamingTransportInterface{
 
   disconnect(): Promise<boolean>;
 
-  subscribe(options: Object): Promise<nstashevent>;
+  subscribe(options: Object): Promise<NstashEvent>;
 
-  publish(event: nstashevent): Promise<boolean>;
+  publish(event: NstashEvent): Promise<boolean>;
 
-  publishAll(events: [nstashevent]): Promise<[nstashevent]> ;
+  publishAll(events: [NstashEvent]): Promise<[NstashEvent]> ;
 
   onDisconnect(cb: Function): undefined;
 
@@ -29,7 +29,7 @@ interface StreamingTransportInterface{
 
   onConnect(cb: Function) : undefined;
 
-  onReceive(data: any) : nstashevent;
+  onReceive(data: any) : NstashEvent;
 
   onPostReceive(cb: Function) : undefined;
 

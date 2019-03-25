@@ -1,8 +1,9 @@
-
-import nstashevent from './nstashevent';
 import * as joi from 'joi';
 
+import NstashEvent from './NstashEvent';
+
 interface BaseProcessor{
+  readonly name: string;
   readonly simulate?: boolean;
   readonly options: Object;
 
@@ -10,9 +11,9 @@ interface BaseProcessor{
 
   validateOptions(options: Object): joi.ValidationError | void;
 
-  receive(processor: BaseProcessor, event: nstashevent): any;
+  receive(processor: BaseProcessor, event: NstashEvent): any;
 
-  send(event: nstashevent): any;
+  send(event: NstashEvent): any;
 
   setSimulate?(sim: boolean): BaseProcessor;
 }

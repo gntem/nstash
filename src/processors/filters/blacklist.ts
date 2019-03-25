@@ -1,8 +1,8 @@
 import * as joi from 'joi';
 import { Stream } from 'stream';
 
-import nstashevent from '../../interfaces/nstashevent';
-import processor from '../../interfaces/processor';
+import nstashevent from '../../interfaces/NstashEvent';
+import processor from '../../interfaces/BaseProcessor';
 
 const optionsSchema = joi.object().keys({
   field: joi.string().default(''),

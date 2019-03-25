@@ -1,8 +1,10 @@
-import processor from '../../interfaces/processor';
-import { Duplex, DuplexOptions, Stream, ReadableOptions, WritableOptions } from 'stream';
-import { BaseCodecInterface } from '../../interfaces/codec';
+import BaseProcessor from '../../interfaces/BaseProcessor';
+import { Writable, WritableOptions } from 'stream';
+import { BaseCodecInterface } from '../../interfaces/Codec';
 
-class OutputStdout extends Stream.Writable{
+const processorName = 'stdout';
+
+class OutputStdout extends Writable implements BaseProcessor {
   private readonly options?: {codec: BaseCodecInterface, codecOptions?: Object};
 
   constructor(
